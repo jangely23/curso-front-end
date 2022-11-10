@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta charset="UTF-8">      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+        <style>
+            :root {
+                --very-light-gray : #C7C7C7;
+                --white: #ffffff;
+                --text-input-field: #f7f7f7;
+                --black: #000000;
+                --dark: #232830;
+                --Hospital-green:  #ACD9B2;
+                --sm:14px;
+                --md:16px;
+                --lg:18px;
+            }
+            .body{
+                margin: 0;
+                box-sizing: border-box;
+                font-family: 'Montserrat', sans-serif;
+            }
+            .cards-container{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, 240px);
+                gap: 26px;
+                place-content: center;
+            }
+            .product-card{
+                width: 240px;
+            }
+            .product-card img{
+                border: solid rgba(0, 0, 0, 0.2);
+                width: 240px;
+                height: 240px;
+                border-radius: 20px;
+                object-fit: cover;
+                padding: 5px;
+            }
+            .product-info{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 12px;
+            }
+            
+            figure{
+                margin: 0;
+            }
+            .product-info figure img{
+                border: none;
+                width: 35px;
+                height: 35px;
+            }
+
+            .product-info div{
+                padding-left: 5px;
+            }
+
+            .product-info div p:nth-child(1){
+                font-weight: bold;
+                font-size: var(--md);
+                margin-top: 0;
+                margin-bottom: 4px;
+            }
+
+            .product-info div p:nth-child(2){
+                font-size: var(--sm);
+                margin-top: 0;
+                margin-bottom: 0;
+                color: var(--very-light-gray);
+            }
+
+            @media(max-width:640px){
+                .cards-container{
+                    grid-template-columns: repeat(auto-fill, 140px);
+                }
+                .product-card{
+                    width: 140px;
+                }
+                .product-card img{
+                    width: 140px;
+                    height: 140px;
+                }
+            }
+        </style>
+</head>
+<body>
+    <section class="main-container">
+        <div class="cards-container">
+            <div class="product-card">
+                <img src="https://comercialpapelera.co/tienda/3128-large_default/resina-epoxica-2x1.jpg" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$120,00</p>
+                        <p>Resina Epoxy</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://panamericana.vteximg.com.br/arquivos/ids/309970-1080-1080/estuche-acrilico-7703513079305.jpg?v=636816327154600000" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$90,00</p>
+                        <p>Pintura Acrilica</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_655286-MCO50934809100_072022-V.jpg" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$145,00</p>
+                        <p>Acuarelas</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://panamericana.vteximg.com.br/arquivos/ids/309860-600-690/set-de-pinceles-mixtos-lion-brushes-deluxe-6-por-6-unidades--2--7707005803096.jpg?v=636815410317400000" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$10,00</p>
+                        <p>Pinceles mixtos</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_694423-MCO45812355351_052021-O.jpg" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$65,00</p>
+                        <p>Pasteles</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://panamericana.vteximg.com.br/arquivos/ids/201370-1080-1080/oleo-conda-x-12-unidades-1-6935249929406.jpg?v=636290992627370000" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$220,00</p>
+                        <p>Oleo</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_681772-MCO46011010067_052021-O.jpg" alt="">
+                <div class="product-info">
+                    <div> 
+                        <p>$120,00</p>
+                        <p>trementina y linaza</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://cdn.shopify.com/s/files/1/0517/0272/6848/products/Portada-Texturizador.png?v=1607534584" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$20,00</p>
+                        <p>Texturizador</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://panamericana.vteximg.com.br/arquivos/ids/202581-1080-1080/lapiz-conte-carboncillo-x-3-bhb-3b-1-7707262489149.jpg?v=636294374945900000" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$120,00</p>
+                        <p>Carboncillo</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.bazzarbog.com/62570-large_default/retablo-para-fotografia-con-autoadhesivo-en-mdf-20x30.jpg" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$220,00</p>
+                        <p>Retablo madera</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://panamericana.vteximg.com.br/arquivos/ids/266498-1080-1080/lienzo-con-bastidor-de-25-cm-x-35-cm-7707345720022.jpg?v=636384202897770000" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$220,00</p>
+                        <p>Lienzo</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://image.made-in-china.com/155f0j00ZzYRqMuyhIcl/2-Masking-Tape-Painting-Adhesive-Paper-Tape-Paintable-Tape.jpg" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$120,00</p>
+                        <p>Cinta enmascarar</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>        
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV9oNafnbvm3HtNWkYI4xAIBmYNQssSGzEIQ&usqp=CAU" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$120,00</p>
+                        <p>Lapiz profesional</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.activebrain.cl/24690-thickbox_leometr/paleta-para-pintar-de-madera-22x17cm.jpg" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$60,00</p>
+                        <p>Paleta</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_741895-MLA49326025479_032022-W.jpg" alt="">
+                <div class="product-info">
+                    <div>
+                        <p>$320,00</p>
+                        <p>Espatulas</p>
+                    </div>
+                    <figure>
+                        <img src="./asset/icons/bt_add_to_cart.svg" alt="">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
