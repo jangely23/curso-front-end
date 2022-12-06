@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sign_out</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+        <style>
+            :root {
+                --very-light-gray : #C7C7C7;
+                --white: #ffffff;
+                --text-input-field: #f7f7f7;
+                --black: #000000;
+                --dark: #232830;
+                --Hospital-green:  #ACD9B2;
+                --sm:14px;
+                --md:16px;
+                --lg:18px;
+            }
+            body{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .product-detail{
+                width: 360px;
+                padding: 24px;
+                position: absolute;
+                box-sizing: border-box;
+                right: 0;
+            }
+
+
+            .title-container{
+                display: flex;
+            }
+
+            .title-container img {
+                transform: rotate(180deg);
+                margin-right: 14px;
+            }
+
+            .title{
+                font-size: var(--lg);
+                font-weight: bold;
+            }
+  
+            .order{
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 16px;
+                align-items: center;
+                background-color: var(--text-input-field);
+                margin-bottom: 24px;
+                border-radius: 8px;
+                padding: 0px 24px;
+            }
+
+            .order p:nth-child(2){
+                text-align: end;
+                font-weight: bold;
+            }
+
+            .order p:nth-child(1){
+                display: flex;
+                flex-direction: column;
+            }
+
+            .order p span:nth-child(1){
+                font-size: var(--md);
+                font-weight: bold;
+            }
+
+            .shopping-card {
+                display: grid;
+                grid-template-columns: auto 1fr auto auto;
+                gap: 16px;
+                margin-bottom: 20px;
+                align-items: center;
+            }
+
+            .shopping-card figure {
+                margin: 0;
+            }
+
+            .shopping-card figure img{
+                width: 70px;
+                height: 70px;
+                border-radius: 20px;
+                border: solid rgba(0, 0, 0, 0.2);
+                object-fit: cover;
+            }
+
+            .shopping-card p:nth-child(2){
+                color: var(--very-light-gray);
+            }
+
+            .shopping-card p:nth-child(3){
+                font-weight: bold;
+                font-size: var(--md);
+            }
+
+            .primary-button{
+                background-color: var(--Hospital-green);
+                border-radius: 10px;
+                border: none;
+                color: var(--white);
+                width: 100%;
+                cursor: pointer;
+                font-size: var(--md);
+                font-weight: bold;
+                height: 50px;
+            }
+
+            @media (max-width:640px){
+                .product-detail{
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <aside class="product-detail">
+            <div class="title-container">
+                <img src="./asset/icons/flechita.svg" alt="arrow">
+                <p class="title">Shopping cart</p>
+            </div>
+            
+            <div class="my-order-content">
+                <div class="shopping-card">
+                    <figure>
+                        <img src="https://comercialpapelera.co/tienda/3128-large_default/resina-epoxica-2x1.jpg" alt="resina">
+                    </figure>
+                    <p>Resina Epoxi</p>
+                    <p>$120,00</p>
+                    <img src="./asset/icons/icon_close.png" alt="close">
+                </div>
+
+                <div class="shopping-card">
+                    <figure>
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_655286-MCO50934809100_072022-V.jpg" alt="acuarelas">
+                    </figure>
+                    <p>Acuarelas</p>
+                    <p>$145,00</p>        
+                    <img src="./asset/icons/icon_close.png" alt="close">
+                </div>
+
+                <div class="shopping-card">
+                    <figure>
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_694423-MCO45812355351_052021-O.jpg" alt="pasteles">
+                    </figure>
+                    <p>Pasteles</p>
+                    <p>$65,00</p>      
+                    <img src="./asset/icons/icon_close.png" alt="close">
+                </div>
+
+                <div class="shopping-card">
+                    <figure>
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_681772-MCO46011010067_052021-O.jpg" alt="trementina">
+                    </figure>
+                    <p>trementina y linaza</p>
+                    <p>$120,00</p>
+                    <img src="./asset/icons/icon_close.png" alt="close">
+                </div>
+
+                <div class="shopping-card">
+                    <figure>
+                        <img src="https://cdn.shopify.com/s/files/1/0517/0272/6848/products/Portada-Texturizador.png?v=1607534584" alt="texturizador">
+                    </figure>
+                    <p>Texturizador</p>
+                    <p>$20,00</p>     
+                    <img src="./asset/icons/icon_close.png" alt="close">    
+                </div>
+
+                <div class="shopping-card">
+                    <figure>
+                        <img src="https://panamericana.vteximg.com.br/arquivos/ids/266498-1080-1080/lienzo-con-bastidor-de-25-cm-x-35-cm-7707345720022.jpg?v=636384202897770000" alt="lienzo">
+                    </figure>
+                    <p>Lienzo</p>
+                    <p>$220,00</p>
+                    <img src="./asset/icons/icon_close.png" alt="close">
+                </div>
+
+                <div class="order">
+                    <p>
+                        <span>Total</span>
+                    </p>
+                    <p>$690,00</p>
+                </div>
+                
+                <div>
+                    <button class="primary-button">
+                        Checkout
+                    </button>
+                </div>
+            </div>
+
+        </aside>
+    </body>
+</html>    
