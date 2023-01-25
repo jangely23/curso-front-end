@@ -4,28 +4,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --very-light-gray : #C7C7C7;
-            --white: #ffffff;
-            --text-input-field: #f7f7f7;
-            --black: #000000;
-            --dark: #232830;
-            --Hospital-green:  #ACD9B2;
-        }
+    <link rel="stylesheet" href="./style.css">
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-    </style>
+    <title>Tienda online</title>
 </head>
 <body>
-    
+    <nav>
+        <img src="./asset/icons/icon_menu.svg" alt="menu" class="mobile-menu-icon">
 
+        <div class="navbar-left">
+            <img src="./asset/logos/logo_yard_sale.svg" alt="logo" class="logo">
+
+            <ul>
+                <li>
+                    <a href="/">All</a>
+                </li>
+                <li>
+                    <a href="/">Clothes</a>
+                </li>
+                <li>
+                    <a href="/">Electronics</a>
+                </li>
+                <li>
+                    <a href="/">Furniture</a>
+                </li>
+                <li>
+                    <a href="/">Toys</a>
+                </li>
+                <li>
+                    <a href="/">Others</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-right">
+            <ul>
+                <li class="navbar-email">platzi@example.com
+                    <img src="./asset/icons/flechita.svg" alt="">
+                </li>
+                <li class="navbar-shopping-cart">
+                    <img src="./asset/icons/icon_shopping_cart.svg" alt="shopping cart">
+                    <div>2</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="desktop-menu inactive">
+            <ul>
+                <li><a href="/" class="title">My orders</a></li>
+                <li><a href="/" class="title">My account</a></li>
+                <li><a href="/" class="title">Sign out</a></li>
+            </ul>
+        </div>
+
+        <div class="mobile-menu inactive">
+            <ul>
+                <li>
+                    <a href="/">CATEGORIES</a>
+                </li>
+                <li>
+                    <a href="/">All</a>
+                </li>
+                <li>
+                    <a href="/">Electronics</a>
+                </li>
+                <li>
+                    <a href="/">Furnitures</a>
+                </li>
+                <li>
+                    <a href="/">Toys</a>
+                </li>
+                <li>
+                    <a href="/">Others</a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="/">My orders</a>
+                </li>
+                <li>
+                    <a href="/">My account</a>
+                </li>
+            </ul>
+            
+            <ul>
+                <li>
+                    <a href="/" class="email">platzi@example.com</a>
+                </li>
+                <li>
+                    <a href="/" class="sign-out">Sign out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>  
+
+    <script src="./main.js"></script>
 </body>
 </html>
