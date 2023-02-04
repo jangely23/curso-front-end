@@ -1,6 +1,9 @@
-/* ===== Insercion de productos desde array ===== */
+/* ============================================================
+| ===== Array harcodeado con los objetos de los productos ===== */
 
 const listProduct = [];
+
+/* Inserta los elementos (objetos de los productos) a el array */
 
 listProduct.push(
     {
@@ -109,20 +112,33 @@ listProduct.push(
     }
 );
 
-/* ===== Acciones del DOM ===== */
+/* ===============================
+| ======= Acciones del DOM ======= */
 
+/* Todos los elementos sobre los cuales se escucharan eventos */
 const menu_email = document.querySelector('.navbar-email');
 const menu_mobile = document.querySelector('.mobile-menu-icon');
 const menu_cart = document.querySelector('.navbar-shopping-cart');
 const container_card = document.querySelector('.cards-container');
-const detail_close = document.querySelector('.product-detail-close');
+const detail_close = document.querySelector('#product-detail-close');
+const orders_close = document.querySelector('#my-orders-close');
+const orders_open = document.querySelector('#view-my-orders');
+const orders_open_mobile = document.querySelector('#view-my-orders-mobile');
 
-menu_email.addEventListener("click",  function(){toggleElement(".desktop-menu", [".product-detail-cart", ".product-detail-info"])});
-menu_mobile.addEventListener("click",  function(){toggleElement(".mobile-menu", [".product-detail-cart", ".product-detail-info"])});
-menu_cart.addEventListener("click",  function(){toggleElement(".product-detail-cart", [".mobile-menu", ".desktop-menu", ".product-detail-info"])});
+/* Escucha los eventos de cada elemento y ejecuta las funciones necesarias*/
+menu_email.addEventListener("click",  function(){toggleElement(".desktop-menu", [".product-detail-cart", ".product-detail-info", ".my-order"])});
+menu_mobile.addEventListener("click",  function(){toggleElement(".mobile-menu", [".product-detail-cart", ".product-detail-info", ".my-order"])});
+menu_cart.addEventListener("click",  function(){toggleElement(".product-detail-cart", [".mobile-menu", ".desktop-menu", ".product-detail-info", ".my-order"])});
 detail_close.addEventListener("click",  function(){inactiveDetailProduct(".product-detail-info")});
+orders_close.addEventListener("click",  function(){inactiveDetailProduct(".my-order")});
+orders_open_mobile.addEventListener("click",  function(){activeDetailProduct(".my-order", [".mobile-menu", ".desktop-menu", ".product-detail-cart"])});
 
-/* recibe como parametro un elemento y un array con los ID o clases a inactivar */
+/* ===========================================================================
+| Función: Mostrar u ocultar un componente del html
+| Recibe: 2 parametros, 1 obligatorio
+|   Parametro 1: elemento a togglear puede ser una etiqueta, una clase o un ID
+|   Parametro 2: un array que liste todos los elementos, clases o ID a ocultar.
+| ===========================================================================*/
 
 function toggleElement(element, checkElement=[]){
     const  element_modify = document.querySelector(element);
@@ -130,11 +146,9 @@ function toggleElement(element, checkElement=[]){
 
     element_modify.classList.toggle('inactive');
 
-    if(!element_modify.classList.contains('inactive')){
-        elemnet_filter_black.classList.remove('inactive');
-    }else{
+    if(!elemnet_filter_black.classList.contains('inactive')){
         elemnet_filter_black.classList.add('inactive');
-    }
+    } 
 
     if(checkElement.length > 0){
         for(check of checkElement){
@@ -144,16 +158,33 @@ function toggleElement(element, checkElement=[]){
             }
 
             if(check == '.product-detail-info'){
-                document.getElementById("img-product-detail-info").remove();
-                document.getElementById("product-info").remove();
+                const detailProuctImg = document.getElementById("img-product-detail-info");
+                const detailProuctInfo = document.getElementById("product-info");
+
+                if(detailProuctImg != null || detailProuctInfo != null ){
+                    detailProuctImg.remove();
+                    detailProuctInfo.remove();
+                }
             }
         }
     }
 }
 
+/* ===========================================================================
+| Función: Oculta un componente del html y limpia contenido de detalle producto
+| Recibe: 2 parametros, 1 obligatorio
+|   Parametro 1: elemento activo a ocultar puede ser una etiqueta, una clase o un ID
+|   Parametro 2: un array que liste todos los componentes que deberian estar ocultos.
+| ===========================================================================*/
+
 function inactiveDetailProduct(element, checkElement=[]){
-    document.getElementById("img-product-detail-info").remove();
-    document.getElementById("product-info").remove();
+    const detailProuctImg = document.getElementById("img-product-detail-info");
+    const detailProuctInfo = document.getElementById("product-info");
+
+    if(detailProuctImg != null || detailProuctInfo != null ){
+        detailProuctImg.remove();
+        detailProuctInfo.remove();
+    }
     
     const  element_modify = document.querySelector(element);
     const elemnet_filter_black = document.querySelector('.filter_black');
@@ -171,15 +202,26 @@ function inactiveDetailProduct(element, checkElement=[]){
     }
 }
 
-function activeDetailProduct(element, checkElement=[], arrayProduct, id_product){
+/* ===========================================================================
+| Función: Activa un componente del html y si es necesario renderiza el detalle
+| de un producto en el componente que se va a activar
+| Recibe: 4 parametros, 1 obligatorio y 3 opcionales
+|   Parametro 1: elemento ocultar a mostrar puede ser una etiqueta, una clase o un ID
+|   Parametro 2: un array que liste todos los componentes que deberian estar ocultos.
+|   Parametro 3: un array de objetos con los productos a renderizar
+|   Parametro 4: la posicion del elemento del array a renderizar
+| ===========================================================================*/
+
+function activeDetailProduct(element, checkElement=[], arrayProduct=[], id_product=0){
     const  element_modify = document.querySelector(element);
     const elemnet_filter_black = document.querySelector('.filter_black');
-
+    
     element_modify.classList.remove('inactive');
     elemnet_filter_black.classList.remove('inactive');
 
-    console.log(id_product);
-    renderDetailProducts(arrayProduct, parseInt(id_product));
+    if(arrayProduct.length > 0){
+        renderDetailProducts(arrayProduct, parseInt(id_product));
+    }
 
     if(checkElement.length > 0){
         for(check of checkElement){
@@ -191,8 +233,12 @@ function activeDetailProduct(element, checkElement=[], arrayProduct, id_product)
     }
 }
 
+/* ===========================================================================
+| Función: Renderiza un array de productos en la interface
+| Recibe: 1 parametro obligatorio
+|   Parametro 1: un array de objetos con los productos a renderizar
+| ===========================================================================*/
 
-/* Recibe como parametro un array de productos */
 function renderProducts(arrayProduct){
 
     for (let i = 0; i < arrayProduct.length; i++){
@@ -200,7 +246,7 @@ function renderProducts(arrayProduct){
         /* ---- Crea los elementos ---- */
         const productCart = document.createElement('div');
         productCart.classList.add('product-card');
-        productCart.addEventListener("click",  function(){activeDetailProduct(".product-detail-info", [".mobile-menu", ".desktop-menu", ".product-detail-cart"], arrayProduct, i)});
+        productCart.addEventListener("click",  function(){activeDetailProduct(".product-detail-info", [".mobile-menu", ".desktop-menu", ".product-detail-cart", ".my-order"], arrayProduct, i)});
 
         const productImg = document.createElement('img');
         productImg.setAttribute('src', arrayProduct[i].imagen);
@@ -229,7 +275,13 @@ function renderProducts(arrayProduct){
     }
 }
 
-/* Recibe como parametro un array y el indice de ese array */
+/* ===========================================================================
+| Función: Renderiza el detalle de un producto en la interface
+| Recibe: 2 parametros obligatorios
+|   Parametro 1: un array de objetos con los productos que estan renderizados
+|   Parametro 2: la posicion del elemento del array a renderizar en detalle
+| ===========================================================================*/
+
 function renderDetailProducts(arrayProduct, element){
 
     const imgProductDetail = document.createElement('img')
@@ -265,5 +317,6 @@ function renderDetailProducts(arrayProduct, element){
     buttonDetail.appendChild(imgButtonDetail);
 }
 
+/* Por defecto renderiza los productos en la interface */
 renderProducts(listProduct);
 /* =============================================== */

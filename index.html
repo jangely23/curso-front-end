@@ -55,7 +55,7 @@
 
         <div class="desktop-menu inactive">
             <ul>
-                <li><a href="/" class="title">My orders</a></li>
+                <li id="view-my-orders"><span class="title">My orders</span></li>
                 <li><a href="/" class="title">My account</a></li>
                 <li><a href="/" class="title">Sign out</a></li>
             </ul>
@@ -84,8 +84,8 @@
             </ul>
 
             <ul>
-                <li>
-                    <a href="/">My orders</a>
+                <li id="view-my-orders-mobile">
+                    <span>My orders</span>
                 </li>
                 <li>
                     <a href="/">My account</a>
@@ -183,22 +183,77 @@
     </aside>
 
     <aside class="product-detail product-detail-info inactive">
-        <div class="product-detail-close">
+        <div class="detail-close" id="product-detail-close">
             <img  src="./asset/icons/icon_close.png" alt="close" >
         </div>
         
         <!-- Insertado desde JS -->
-
-        <!--<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV9oNafnbvm3HtNWkYI4xAIBmYNQssSGzEIQ&usqp=CAU" alt="lapiz profesional">
-         <div class="product-info">
-            <p>$120,00</p>
-            <p>Lapiz profesional</p>
-            <p>Kit de herramientas de dibujo y boceto profesional de 29 piezas con lápices de grafito, lápices de carbón, bolígrafo borrable de papel, cuchillo de manualidades.Este es un kit de herramientas de dibujo el cual incluye todos lo necesario para un boceto nivel profesional. </p>
-            <button class="primary-button add-to-cart-button">
-                <img src="./asset/icons/bt_add_to_cart.svg" alt="add to card">
-            </button>
-        </div>  -->
    </aside>
+
+    <aside class="my-order inactive">
+        <div class="my-order-container">
+            <div class="detail-close" id="my-orders-close">
+                <img  src="./asset/icons/icon_close.png" alt="close" >
+            </div>
+
+            <h1 class="title-my-order">My orders</h1>
+            <div class="my-order-content">
+                <div class="order">
+                    <p>
+                        <span>03.12.22</span>
+                        <span>6 articles</span>
+                    </p>
+                    <p>$690,00</p>
+                    <img src="./asset/icons/flechita.svg" alt="arrow">
+                </div>
+
+                <div class="order">
+                    <p>
+                        <span>03.12.22</span>
+                        <span>6 articles</span>
+                    </p>
+                    <p>$690,00</p>
+                    <img src="./asset/icons/flechita.svg" alt="arrow">
+                </div>
+
+                <div class="order">
+                    <p>
+                        <span>01.12.22</span>
+                        <span>10 articles</span>
+                    </p>
+                    <p>$1390,00</p>
+                    <img src="./asset/icons/flechita.svg" alt="arrow">
+                </div>
+
+                <div class="order">
+                    <p>
+                        <span>25.11.22</span>
+                        <span>3 articles</span>
+                    </p>
+                    <p>$145,00</p>
+                    <img src="./asset/icons/flechita.svg" alt="arrow">
+                </div>
+
+                <div class="order">
+                    <p>
+                        <span>13.11.22</span>
+                        <span>2 articles</span>
+                    </p>
+                    <p>$60,00</p>
+                    <img src="./asset/icons/flechita.svg" alt="arrow">
+                </div>
+
+                <div class="order">
+                    <p>
+                        <span>01.11.22</span>
+                        <span>1 articles</span>
+                    </p>
+                    <p>$90,00</p>
+                    <img src="./asset/icons/flechita.svg" alt="arrow">
+                </div>
+            </div>
+        </div>
+    </aside>
 
     <section class="main-container">
         <div class="cards-container">
