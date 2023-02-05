@@ -124,14 +124,17 @@ const detail_close = document.querySelector('#product-detail-close');
 const orders_close = document.querySelector('#my-orders-close');
 const orders_open = document.querySelector('#view-my-orders');
 const orders_open_mobile = document.querySelector('#view-my-orders-mobile');
+const my_account = document.querySelector('#view-my-account');
 
 /* Escucha los eventos de cada elemento y ejecuta las funciones necesarias*/
-menu_email.addEventListener("click",  function(){toggleElement(".desktop-menu", [".product-detail-cart", ".product-detail-info", ".my-order"])});
-menu_mobile.addEventListener("click",  function(){toggleElement(".mobile-menu", [".product-detail-cart", ".product-detail-info", ".my-order"])});
-menu_cart.addEventListener("click",  function(){toggleElement(".product-detail-cart", [".mobile-menu", ".desktop-menu", ".product-detail-info", ".my-order"])});
+menu_email.addEventListener("click",  function(){toggleElement(".desktop-menu", [".product-detail-cart", ".product-detail-info", ".my-order", ".login"])});
+menu_mobile.addEventListener("click",  function(){toggleElement(".mobile-menu", [".product-detail-cart", ".product-detail-info", ".my-order", ".login"])});
+my_account.addEventListener("click",  function(){toggleElement(".login", [".mobile-menu", ".desktop-menu", ".product-detail-info", ".my-order"])});
+menu_cart.addEventListener("click",  function(){toggleElement(".product-detail-cart", [".mobile-menu", ".desktop-menu", ".product-detail-info", ".my-order", ".login"])});
 detail_close.addEventListener("click",  function(){inactiveDetailProduct(".product-detail-info")});
 orders_close.addEventListener("click",  function(){inactiveDetailProduct(".my-order")});
-orders_open_mobile.addEventListener("click",  function(){activeDetailProduct(".my-order", [".mobile-menu", ".desktop-menu", ".product-detail-cart"])});
+orders_open.addEventListener("click",  function(){activeDetailProduct(".my-order", [".mobile-menu", ".desktop-menu", ".product-detail-cart", ".login"])});
+orders_open_mobile.addEventListener("click",  function(){activeDetailProduct(".my-order", [".mobile-menu", ".desktop-menu", ".product-detail-cart", ".login"])});
 
 /* ===========================================================================
 | Función: Mostrar u ocultar un componente del html

@@ -13,96 +13,98 @@
     <title>Tienda online</title>
 </head>
 <body>
-    <nav>
-        <img src="./asset/icons/icon_menu.svg" alt="menu" class="mobile-menu-icon">
+    <header>
+        <nav>
+            <img src="./asset/icons/icon_menu.svg" alt="menu" class="mobile-menu-icon">
 
-        <div class="navbar-left">
-            <img src="./asset/logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <div class="navbar-left">
+                <img src="./asset/logos/logo_yard_sale.svg" alt="logo" class="logo">
 
-            <ul>
-                <li>
-                    <a href="/">All</a>
-                </li>
-                <li>
-                    <a href="/">Clothes</a>
-                </li>
-                <li>
-                    <a href="/">Electronics</a>
-                </li>
-                <li>
-                    <a href="/">Furniture</a>
-                </li>
-                <li>
-                    <a href="/">Toys</a>
-                </li>
-                <li>
-                    <a href="/">Others</a>
-                </li>
-            </ul>
-        </div>
+                <ul>
+                    <li>
+                        <a href="/">All</a>
+                    </li>
+                    <li>
+                        <a href="/">Clothes</a>
+                    </li>
+                    <li>
+                        <a href="/">Electronics</a>
+                    </li>
+                    <li>
+                        <a href="/">Furniture</a>
+                    </li>
+                    <li>
+                        <a href="/">Toys</a>
+                    </li>
+                    <li>
+                        <a href="/">Others</a>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="navbar-right">
-            <ul>
-                <li class="navbar-email">platzi@example.com
-                    <img src="./asset/icons/flechita.svg" alt="">
-                </li>
-                <li class="navbar-shopping-cart">
-                    <img src="./asset/icons/icon_shopping_cart.svg" alt="shopping cart">
-                    <div>2</div>
-                </li>
-            </ul>
-        </div>
+            <div class="navbar-right">
+                <ul>
+                    <li class="navbar-email">platzi@example.com
+                        <img src="./asset/icons/flechita.svg" alt="">
+                    </li>
+                    <li class="navbar-shopping-cart">
+                        <img src="./asset/icons/icon_shopping_cart.svg" alt="shopping cart">
+                        <div>2</div>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="desktop-menu inactive">
-            <ul>
-                <li id="view-my-orders"><span class="title">My orders</span></li>
-                <li><a href="/" class="title">My account</a></li>
-                <li><a href="/" class="title">Sign out</a></li>
-            </ul>
-        </div>
+            <div class="desktop-menu inactive">
+                <ul>
+                    <li id="view-my-orders"><span class="title">My orders</span></li>
+                    <li><a id="view-my-account" class="title">My account</a></li>
+                    <li><a href="/" class="title">Sign out</a></li>
+                </ul>
+            </div>
 
-        <div class="mobile-menu inactive">
-            <ul>
-                <li>
-                    <a href="/">CATEGORIES</a>
-                </li>
-                <li>
-                    <a href="/">All</a>
-                </li>
-                <li>
-                    <a href="/">Electronics</a>
-                </li>
-                <li>
-                    <a href="/">Furnitures</a>
-                </li>
-                <li>
-                    <a href="/">Toys</a>
-                </li>
-                <li>
-                    <a href="/">Others</a>
-                </li>
-            </ul>
+            <div class="mobile-menu inactive">
+                <ul>
+                    <li>
+                        <a href="/">CATEGORIES</a>
+                    </li>
+                    <li>
+                        <a href="/">All</a>
+                    </li>
+                    <li>
+                        <a href="/">Electronics</a>
+                    </li>
+                    <li>
+                        <a href="/">Furnitures</a>
+                    </li>
+                    <li>
+                        <a href="/">Toys</a>
+                    </li>
+                    <li>
+                        <a href="/">Others</a>
+                    </li>
+                </ul>
 
-            <ul>
-                <li id="view-my-orders-mobile">
-                    <span>My orders</span>
-                </li>
-                <li>
-                    <a href="/">My account</a>
-                </li>
-            </ul>
-            
-            <ul>
-                <li>
-                    <a href="/" class="email">platzi@example.com</a>
-                </li>
-                <li>
-                    <a href="/" class="sign-out">Sign out</a>
-                </li>
-            </ul>
-        </div>
-    </nav>  
-
+                <ul>
+                    <li id="view-my-orders-mobile">
+                        <span>My orders</span>
+                    </li>
+                    <li>
+                        <a href="/">My account</a>
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li>
+                        <a href="/" class="email">platzi@example.com</a>
+                    </li>
+                    <li>
+                        <a href="/" class="sign-out">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>   
+    </header>
+ 
     <div class="filter_black inactive"></div>
     
     <aside class="product-detail product-detail-cart inactive">
@@ -255,7 +257,29 @@
         </div>
     </aside>
 
-    <section class="main-container">
+    <aside class="login inactive">
+        <div class="form-container">
+            <h1 class="title">My account</h1>
+
+            <form action="/" class="form">
+                <div>
+                    <label class="label" for="name">Name</label>
+                    <p class="value">Camila Yokoo</p>
+
+                    <label class="label" for="email">Email address</label>
+                    <p class="value">camilayokoo@gmail.com</p>
+
+                    <label class="label" for="password">Password</label>
+                    <p class="value">*********</p>
+                </div>
+
+                <input type="submit" value="Edit" class="secondary-button login-button">
+            </form>
+
+        </div>
+    </aside>
+
+    <section class="main-container" aria-label="lista de productos">
         <div class="cards-container">
             <!-- Insertado desde JS -->
         </div>

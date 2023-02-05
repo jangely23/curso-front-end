@@ -46,6 +46,7 @@ body{
     padding: 4px;
     margin: 3px 4px;
     background: var(--white);
+    cursor: pointer;
 }
 
 /* ------- Nav General ------- */
@@ -174,6 +175,7 @@ nav{
     text-decoration: none;
     margin-bottom: 20px;
     display: inline-block;
+    cursor: pointer;
 }
 
 /* ------- Nav Mobile ------- */
@@ -472,6 +474,66 @@ figure{
     color: var(--very-light-gray);
 }
 
+/* ----- My Account ----- */
+
+.login{
+    background-color: var(--white);
+    width: 360px;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    right: 0;
+}
+
+.form-container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+}
+
+.title{
+    font-size:  var(--lg);
+    margin-bottom: 50px;
+    text-align: start;
+    padding-top: 24px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    font-size: var(--sm);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.value{
+    color: var(--very-light-gray);
+    font-size: var(--md);
+    margin: 8px 0 32px 0;
+}
+
+.secondary-button{
+    background-color: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--Hospital-green);
+    color: var(--Hospital-green);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+}
+
+
 
 @media(max-width: 640px){
     .mobile-menu-icon{
@@ -482,7 +544,7 @@ figure{
         display: none;
     }
 
-    .product-detail, .my-order{
+    .product-detail, .my-order, .login{
         width: 100%;
         height: 100vh;
     }
@@ -496,6 +558,15 @@ figure{
     .product-card img{
         width: 140px;
         height: 140px;
+    }
+
+    .form-container{
+        height: 100%;
+    }
+
+    .form{
+        height: 100%;
+        justify-content: space-between;
     }
 }
 
